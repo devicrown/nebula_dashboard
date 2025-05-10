@@ -1,0 +1,7 @@
+{
+  "title": "Nebula Dashboard",
+  "columns": 3,
+  "cardSize": "small",
+  "cardGap": "1.5rem",
+  "background": "vanta:fog"
+}

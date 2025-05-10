@@ -1,0 +1,90 @@
+/* Structure de base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  background-color: #0d0d1f;
+  color: white;
+  overflow: hidden;
+}
+
+/* Fond animé en arrière-plan */
+#vanta-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Contenu principal */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+/* Logo principal */
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px rgba(255, 0, 128, 0.5);
+}
+
+/* Barre de recherche */
+.search {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Grille des raccourcis */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Carte raccourci */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(3px);
+  width: var(--card-size);
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.08);
+}
+
+.card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.card span {
+  display: block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "title": "AdGuard Home",
+    "url": "http://192.168.1.147:81/",
+    "icon": "assets/icons/adguard.png"
+  },
+  {
+    "title": "FreshRSS",
+    "url": "http://192.168.1.147:8103/",
+    "icon": "assets/icons/freshrss.png"
+  },
+  {
+    "title": "NetAlertX",
+    "url": "http://192.168.1.147:15000",
+    "icon": "assets/icons/netalertx.png"
+  },
+  {
+    "title": "SearXNG",
+    "url": "http://192.168.1.147:8105/",
+    "icon": "assets/icons/searxng.png"
+  }
+]

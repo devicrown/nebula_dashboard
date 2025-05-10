@@ -3,5 +3,13 @@
   "columns": 3,
   "cardSize": "small",
   "cardGap": "1.5rem",
-  "background": "vanta:fog"
+  "background": "vanta:fog",
+  "searchEngines": [
+    "google",
+    "brave",
+    "duckduckgo",
+    "github",
+    "reddit",
+    "wayback"
+  ]
 }

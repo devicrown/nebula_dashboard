@@ -29,27 +29,131 @@ html, body {
   padding: 3rem 1rem;
 }
 
-/* Logo principal */
+/* Titre */
+@keyframes softGlow {
+  0%, 100% {
+    text-shadow: 0 0 6px #33ccff, 0 0 12px #66ffff;
+  }
+  50% {
+    text-shadow: 0 0 12px #33ccff, 0 0 18px #66ffff;
+  }
+}
+
+@keyframes hueBluePulse {
+  0%, 100% { color: #e0f7ff; }
+  50% { color: #d0eaff; }
+}
+
 .logo {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 12px rgba(255, 0, 128, 0.5);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.8rem;
+  text-align: center;
+  margin-top: 40px;
+  color: #e0f7ff;
+
+  text-shadow:
+    0 0 6px #33ccff,
+    0 0 12px #66ffff;
+
+  animation:
+    softGlow 3s ease-in-out infinite,
+    hueBluePulse 6s ease-in-out infinite;
 }
 
 /* Barre de recherche */
-.search {
-  width: 100%;
-  max-width: 500px;
-  padding: 1rem 1.2rem;
-  border: none;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 1rem;
-  margin-bottom: 3rem;
-  backdrop-filter: blur(4px);
+.search-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
+
+.search-icon {
+  width: 48px;
+  height: 48px;
+  padding: 0.4rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(3px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.search-icon img {
+  filter: drop-shadow(0 0 2px rgba(54, 148, 255, 0.5));
+}
+
+.search-icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(255, 0, 128, 0.3);
+}
+
+.search-icon img {
+  width: 100%;
+  height: auto;
+}
+
+/* Barre de recherche dynamique */
+.search-switch {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.search-icon {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0.3rem;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.search-icon img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.search-icon:hover img {
+  transform: scale(1.1);
+}
+
+.search-icon.expanded {
+  width: 300px;
+  padding: 0.4rem 1rem;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.search-icon.expanded img {
+  display: none;
+}
+
+.search-icon input {
+  all: unset;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  background: transparent;
+  padding: 0.3rem 0;
+}
+
+.search-icon button {
+  all: unset;
+  color: #ff99cc;
+  font-size: 1.2rem;
+  margin-left: 0.8rem;
+  cursor: pointer;
+}
+
+
 
 /* Grille des raccourcis */
 .grid {

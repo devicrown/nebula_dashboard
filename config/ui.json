@@ -1,5 +1,6 @@
 {
   "title": "Nebula Dashboard",
+  "theme": "classic",
   "columns": 4,
   "cardSize": "medium",
   "cardGap": "1.5rem",

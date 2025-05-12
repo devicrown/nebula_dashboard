@@ -104,12 +104,10 @@ function expandIcon(icon) {
   // Transformer en champ
   icon.classList.add("expanded");
   icon.innerHTML = `
-    <input type="text" placeholder="Recherche sur ${engine.name}..." />
-    <button>🔍</button>
+  <input type="text" placeholder="Recherche sur ${engine.name}..." />
   `;
 
   const input = icon.querySelector("input");
-  const button = icon.querySelector("button");
 
   input.focus();
 
@@ -123,8 +121,6 @@ function expandIcon(icon) {
   input.addEventListener("keypress", (e) => {
     if (e.key === "Enter") searchNow();
   });
-
-  button.addEventListener("click", () => searchNow());
 
   // Gestion du clic en dehors
   function handleClickOutside(e) {

@@ -1,22 +1,57 @@
 [
   {
+    "type": "link",
     "title": "AdGuard Home",
     "url": "http://192.168.1.147:81/",
     "icon": "config/icons/adguard.png"
   },
   {
+    "type": "link",
     "title": "FreshRSS",
     "url": "http://192.168.1.147:8103/",
     "icon": "config/icons/freshrss.png"
   },
   {
+    "type": "link",
     "title": "NetAlertX",
     "url": "http://192.168.1.147:15000",
     "icon": "config/icons/netalertx.png"
   },
   {
+    "type": "link",
     "title": "SearXNG",
     "url": "http://192.168.1.147:8105/",
     "icon": "config/icons/searxng.png"
+  },
+  {
+    "type": "folder",
+    "title": "Developpement",
+    "children": [
+      {
+        "title": "Forgejo",
+        "url": "http://192.168.1.147:8109/",
+        "icon": "config/icons/forgejo.png"
+      },
+      {
+        "title": "Portainer",
+        "url": "https://192.168.1.147:9443/#!/auth",
+        "icon": "config/icons/portainer.png"
+      },
+      {
+        "title": "TP-Link",
+        "url": "https://192.168.1.253/webpages/index.html?t=0767ff23",
+        "icon": "config/icons/tp-link.png"
+      },      
+      {
+        "title": "Stirling PDF",
+        "url": "http://192.168.1.147:8100/?lang=fr_FR",
+        "icon": "config/icons/stirling_pdf.png"
+      },      
+      {
+        "title": "Speed test",
+        "url": "https://192.168.1.147:8443/admin/login",
+        "icon": "config/icons/speed_test.png"
+      }
+    ]
   }
 ]

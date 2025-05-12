@@ -15,6 +15,29 @@ fetch("config/ui.json")
       renderSearchIcons(config.searchEngines);
     }
 
+    if (config.defaultSearchEngine) {
+    window.defaultSearchEngine = config.defaultSearchEngine;
+
+    // Si l'utilisateur tape un caractère, simuler le clic
+    let triggered = false;
+    window.addEventListener("keydown", (e) => {
+        if (triggered) return; // une seule fois
+        const switchContainer = document.getElementById("searchSwitch");
+        const defaultIcon = [...switchContainer.children].find(div =>
+        div.dataset.engine === window.defaultSearchEngine
+        );
+        if (defaultIcon) {
+        triggered = true;
+        expandIcon(defaultIcon);
+        // attendre que le champ apparaisse
+        setTimeout(() => {
+            const input = defaultIcon.querySelector("input");
+            if (input) input.focus();
+        }, 50);
+        }
+    });
+    }
+
     // Après avoir appliqué les styles, charger les raccourcis
     return fetch("config/shortcuts.json");
   })

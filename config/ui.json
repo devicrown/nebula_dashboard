@@ -1,9 +1,10 @@
 {
   "title": "Nebula Dashboard",
-  "columns": 3,
-  "cardSize": "small",
+  "columns": 4,
+  "cardSize": "medium",
   "cardGap": "1.5rem",
   "background": "vanta:fog",
+  "defaultSearchEngine": "google",
   "searchEngines": [
     "google",
     "brave",
@@ -12,4 +13,5 @@
     "reddit",
     "wayback"
   ]
+
 }

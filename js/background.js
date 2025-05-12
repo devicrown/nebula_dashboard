@@ -5,7 +5,7 @@ function applyBackground(backgroundString) {
   const el = document.getElementById("vanta-bg");
 
   if (!el) {
-    console.warn("Élément #vanta-bg introuvable");
+    console.warn("Missing #vanta-bg");
     return;
   }
 

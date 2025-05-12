@@ -1,16 +1,16 @@
-// Chargement de la configuration UI (titre, colonnes, fond, moteurs)
+// Loading UI configuration (title, columns, background, engines)
 fetch("config/ui.json")
   .then(res => res.json())
   .then(config => {
-    // Appliquer les paramètres d’interface
+    // Apply interface settings
     applyUIConfig(config);
 
-    // Appliquer le fond dynamique si défini
+    // Apply dynamic background if defined
     if (config.background) {
       applyBackground(config.background);
     }
 
-    // Générer dynamiquement les moteurs de recherche si présents
+    // Dynamically generate search engines if present
     if (config.searchEngines) {
       renderSearchIcons(config.searchEngines);
     }
@@ -18,7 +18,7 @@ fetch("config/ui.json")
     if (config.defaultSearchEngine) {
     window.defaultSearchEngine = config.defaultSearchEngine;
 
-    // Si l'utilisateur tape un caractère, simuler le clic
+    // If the user types a character, simulate the click
     let triggered = false;
     window.addEventListener("keydown", (e) => {
         if (triggered) return; // une seule fois
@@ -29,7 +29,7 @@ fetch("config/ui.json")
         if (defaultIcon) {
         triggered = true;
         expandIcon(defaultIcon);
-        // attendre que le champ apparaisse
+        // wait for the field to appear
         setTimeout(() => {
             const input = defaultIcon.querySelector("input");
             if (input) input.focus();
@@ -38,14 +38,14 @@ fetch("config/ui.json")
     });
     }
 
-    // Après avoir appliqué les styles, charger les raccourcis
+    // After applying the styles, load the shortcuts
     return fetch("config/shortcuts.json");
   })
   .then(res => res.json())
   .then(shortcuts => {
-    // Afficher les cartes de raccourcis
+    // Show shortcut cards
     renderBookmarks(shortcuts);
   })
   .catch((err) => {
-    console.error("Erreur dans la configuration ou les raccourcis :", err);
+    console.error("Error in configuration or shortcuts :", err);
   });

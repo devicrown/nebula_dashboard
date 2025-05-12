@@ -1,4 +1,4 @@
-// === Liste des moteurs disponibles (tous) ===
+// === List of available engines (all) ===
 const availableEngines = {
   google: {
     name: "Google",
@@ -32,7 +32,7 @@ const availableEngines = {
   }
 };
 
-// === Application de la configuration UI (titre, colonnes, taille de carte) ===
+// === Applying UI configuration (title, columns, map size) ===
 function applyUIConfig(config) {
   const titleEl = document.querySelector(".logo");
   if (titleEl) titleEl.textContent = config.title || "Nebula Dashboard";
@@ -49,7 +49,7 @@ function applyUIConfig(config) {
   document.documentElement.style.setProperty('--card-size', size);
 }
 
-// === Taille de carte par nom ===
+// === Card size by name ===
 function getCardSize(size) {
   switch (size) {
     case "small": return "120px";
@@ -59,19 +59,19 @@ function getCardSize(size) {
   }
 }
 
-// === Lecture de la taille de carte depuis le DOM
+// === Reading the map size from the DOM
 function getCardSizeFromConfig() {
   const size = getComputedStyle(document.documentElement).getPropertyValue('--card-size');
   return size.trim() || "160px";
 }
 
-// === Génère dynamiquement les icônes de recherche
+// === Dynamically generates search icons
 function renderSearchIcons(engineList) {
   const container = document.getElementById("searchSwitch");
   container.innerHTML = "";
 
-  window.searchEnginesMap = {};              // reset propre
-  window.searchEnginesVisible = engineList;  // conserver la liste active
+  window.searchEnginesMap = {};              // reset clean
+  window.searchEnginesVisible = engineList;  // keep the list active
 
   engineList.forEach(engineKey => {
     const engine = availableEngines[engineKey];
@@ -90,18 +90,18 @@ function renderSearchIcons(engineList) {
   });
 }
 
-// === Comportement quand on clique sur une icône
+// === Behavior when clicking on an icon
 function expandIcon(icon) {
   const engineKey = icon.dataset.engine;
   const engine = window.searchEnginesMap?.[engineKey];
   if (!engine) return;
 
-  // Masquer les autres
+  // Hide others
   document.querySelectorAll(".search-icon").forEach(i => {
     if (i !== icon) i.style.display = "none";
   });
 
-  // Transformer en champ
+  // Transform into field
   icon.classList.add("expanded");
   icon.innerHTML = `
   <input type="text" placeholder="Recherche sur ${engine.name}..." />
@@ -122,7 +122,7 @@ function expandIcon(icon) {
     if (e.key === "Enter") searchNow();
   });
 
-  // Gestion du clic en dehors
+  // Click management outside
   function handleClickOutside(e) {
     if (!icon.contains(e.target)) {
       renderSearchIcons(window.searchEnginesVisible);
@@ -130,7 +130,7 @@ function expandIcon(icon) {
     }
   }
 
-  // Laisser le temps au DOM de finir l’événement de clic initial
+  // Allow time for the DOM to finish the initial click event
   setTimeout(() => {
     document.addEventListener("click", handleClickOutside);
   }, 0);

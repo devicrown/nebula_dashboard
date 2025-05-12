@@ -28,7 +28,7 @@ function renderFolderCard(folder) {
   card.className = "card folder-card";
   card.dataset.folderTitle = folder.title;
 
-  // Crée dynamiquement les 4 mini-icônes
+  // Dynamically creates the 4 mini-icons
   const miniContainer = document.createElement("div");
   miniContainer.className = "mini-icons";
 
@@ -40,15 +40,15 @@ function renderFolderCard(folder) {
     miniContainer.appendChild(icon);
   });
 
-  // Crée le titre du dossier
+  // Creates the folder title
   const title = document.createElement("span");
   title.textContent = folder.title;
 
-  // Ajoute tout à la carte
+  // Add everything to the map
   card.appendChild(miniContainer);
   card.appendChild(title);
 
-  // Ajoute le comportement au clic
+  // Adds click behavior
   card.addEventListener("click", (e) => {
     e.stopPropagation();
     expandFolder(folder, card);
@@ -59,9 +59,7 @@ function renderFolderCard(folder) {
 
 
 function expandFolder(folder, card) {
-  document.querySelectorAll(".folder-card").forEach(c => {
-    if (c !== card) c.classList.add("hidden");
-  });
+
 
   const miniIcons = card.querySelector(".mini-icons");
   const title = card.querySelector("span");
@@ -118,10 +116,10 @@ function closeFolder(card) {
   card.classList.remove("folder-opened");
   card.classList.add("folder-closing");
 
-  // Nettoyage
+  // Clean
   card.innerHTML = "";
 
-  // Création réelle des éléments DOM
+  // Actual creation of DOM elements
   const miniContainer = document.createElement("div");
   miniContainer.className = "mini-icons fade-in";
 
@@ -144,7 +142,7 @@ function closeFolder(card) {
     expandFolder(folder, card);
   });
 
-  // Fin animation
+  // End animation
   setTimeout(() => {
     card.classList.remove("folder-closing");
     document.querySelectorAll(".folder-card").forEach(c => c.classList.remove("hidden"));

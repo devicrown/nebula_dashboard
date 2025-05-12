@@ -1,4 +1,4 @@
-/* Structure de base */
+/* Main structure */
 html, body {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html, body {
   overflow: hidden;
 }
 
-/* Fond animé */
+/* Animated background */
 #vanta-bg {
   position: fixed;
   top: 0;
@@ -19,7 +19,7 @@ html, body {
   z-index: 0;
 }
 
-/* Contenu principal */
+/* Main content */
 .content {
   position: relative;
   z-index: 1;
@@ -29,7 +29,7 @@ html, body {
   padding: 3rem 1rem;
 }
 
-/* Titre animé */
+/* Animated title */
 @keyframes softGlow {
   0%, 100% { text-shadow: 0 0 6px #33ccff, 0 0 12px #66ffff; }
   50% { text-shadow: 0 0 12px #33ccff, 0 0 18px #66ffff; }
@@ -49,7 +49,7 @@ html, body {
   animation: softGlow 3s ease-in-out infinite, hueBluePulse 6s ease-in-out infinite;
 }
 
-/* Moteurs de recherche */
+/* Search engine */
 .search-switch {
   display: flex;
   gap: 1.2rem;
@@ -97,7 +97,7 @@ html, body {
   padding: 0.3rem 0;
 }
 
-/* Grille des raccourcis */
+/* Shortcut grid */
 .grid {
   display: grid;
   justify-content: center;
@@ -110,7 +110,7 @@ html, body {
 }
 .grid > * { justify-self: center; }
 
-/* Carte de raccourci */
+/* Card grid */
 .card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
@@ -141,7 +141,7 @@ html, body {
   color: #b8b8b8cc;
 }
 
-/* Dossier fermé avec mini-icônes */
+/* Closed folder with mini icons */
 .folder-card {
   display: flex;
   flex-direction: column;
@@ -171,7 +171,7 @@ html, body {
   display: block;
 }
 
-/* Dossier ouvert */
+/* Open folder */
 .folder-card.folder-opened {
   overflow: hidden;
   background: rgba(255, 255, 255, 0.03);

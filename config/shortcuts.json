@@ -1,56 +1,110 @@
 [
   {
     "type": "link",
+    "title": "Netdata",
+    "url": "https://www.netdata.cloud/",
+    "icon": "config/icons/netdata.png"
+  },  
+  {
+    "type": "link",
+    "title": "Uptime Kuma",
+    "url": "https://uptime.kuma.pet/",
+    "icon": "config/icons/uptime_kuma.png"
+  },  
+  {
+    "type": "link",
+    "title": "Prometheus",
+    "url": "https://prometheus.io/",
+    "icon": "config/icons/prometheus.png"
+  },  
+  {
+    "type": "link",
     "title": "AdGuard Home",
-    "url": "http://192.168.1.147:81/",
+    "url": "https://adguard.com",
     "icon": "config/icons/adguard.png"
   },
   {
     "type": "link",
-    "title": "FreshRSS",
-    "url": "http://192.168.1.147:8103/",
-    "icon": "config/icons/freshrss.png"
+    "title": "Next Cloud",
+    "url": "https://nextcloud.com",
+    "icon": "config/icons/nextcloud.png"
   },
   {
     "type": "link",
-    "title": "NetAlertX",
-    "url": "http://192.168.1.147:15000",
-    "icon": "config/icons/netalertx.png"
+    "title": "WireGuard",
+    "url": "https://www.wireguard.com/",
+    "icon": "config/icons/wireguard.png"
   },
   {
     "type": "link",
-    "title": "SearXNG",
-    "url": "http://192.168.1.147:8105/",
-    "icon": "config/icons/searxng.png"
+    "title": "GitLab",
+    "url": "https://www.gitlab.com",
+    "icon": "config/icons/gitlab.png"
+  },  
+  {
+    "type": "link",
+    "title": "Grafana",
+    "url": "https://grafana.com/",
+    "icon": "config/icons/Grafana.png"
+  },  
+  {
+    "type": "link",
+    "title": "Outlook",
+    "url": "https://www.microsoft.com/",
+    "icon": "config/icons/outlook.png"
+  },
+  {
+    "title": "Portainer",
+    "url": "https://www.portainer.io/",
+    "icon": "config/icons/portainer.png"
   },
   {
     "type": "folder",
-    "title": "Developpement",
+    "title": "Media",
+    "children": [  
+      {
+        "type": "link",
+        "title": "Spotify",
+        "url": "https://open.spotify.com",
+        "icon": "config/icons/spotify.png"
+      },
+      {
+      "type": "link",
+      "title": "Plex",
+      "url": "https://www.plex.tv",
+      "icon": "config/icons/plex.png"
+      },    
+      {
+      "type": "link",
+      "title": "Deezer",
+      "url": "https://www.deezer.com/fr/",
+      "icon": "config/icons/deezer.png"
+      }   
+    ]
+  },  
+  {
+    "type": "folder",
+    "title": "Social",
     "children": [
       {
-        "title": "Forgejo",
-        "url": "http://192.168.1.147:8109/",
-        "icon": "config/icons/forgejo.png"
+        "title": "Facebook",
+        "url": "https://www.facebook.com/",
+        "icon": "config/icons/facebook.png"
       },
       {
-        "title": "Portainer",
-        "url": "https://192.168.1.147:9443/#!/auth",
-        "icon": "config/icons/portainer.png"
-      },
-      {
-        "title": "TP-Link",
-        "url": "https://192.168.1.253/webpages/index.html?t=0767ff23",
-        "icon": "config/icons/tp-link.png"
+        "title": "Instagram",
+        "url": "https://www.instagram.com/",
+        "icon": "config/icons/instagram.png"
       },      
       {
-        "title": "Stirling PDF",
-        "url": "http://192.168.1.147:8100/?lang=fr_FR",
-        "icon": "config/icons/stirling_pdf.png"
+        "title": "Youtube",
+        "url": "https://www.youtube.com",
+        "icon": "config/icons/youtube.png"
       },      
       {
-        "title": "Speed test",
-        "url": "https://192.168.1.147:8443/admin/login",
-        "icon": "config/icons/speed_test.png"
+        "title": "Reddit",
+        "url": "https://www.reddit.com/",
+        "icon": "config/icons/reddit.png"
       }
     ]
   }

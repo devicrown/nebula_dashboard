@@ -32,7 +32,8 @@ const availableEngines = {
   }
 };
 
-// === Applying UI configuration (title, columns, map size) ===
+let searchOpen = false;
+
 function applyUIConfig(config) {
   const titleEl = document.querySelector(".logo");
   if (titleEl) titleEl.textContent = config.title || "Nebula Dashboard";
@@ -49,7 +50,6 @@ function applyUIConfig(config) {
   document.documentElement.style.setProperty('--card-size', size);
 }
 
-// === Card size by name ===
 function getCardSize(size) {
   switch (size) {
     case "small": return "120px";
@@ -59,19 +59,17 @@ function getCardSize(size) {
   }
 }
 
-// === Reading the map size from the DOM
 function getCardSizeFromConfig() {
   const size = getComputedStyle(document.documentElement).getPropertyValue('--card-size');
   return size.trim() || "160px";
 }
 
-// === Dynamically generates search icons
 function renderSearchIcons(engineList) {
   const container = document.getElementById("searchSwitch");
   container.innerHTML = "";
 
-  window.searchEnginesMap = {};              // reset clean
-  window.searchEnginesVisible = engineList;  // keep the list active
+  window.searchEnginesMap = {};
+  window.searchEnginesVisible = engineList;
 
   engineList.forEach(engineKey => {
     const engine = availableEngines[engineKey];
@@ -86,29 +84,30 @@ function renderSearchIcons(engineList) {
     div.innerHTML = `<img src="assets/icons/${engine.icon}" alt="${engine.name}">`;
     container.appendChild(div);
 
-    div.addEventListener("click", () => expandIcon(div));
+    div.addEventListener("click", (event) => {
+      event.stopPropagation();
+      expandIcon(div, container);
+    });
   });
 }
 
-// === Behavior when clicking on an icon
-function expandIcon(icon) {
+function expandIcon(icon, container) {
   const engineKey = icon.dataset.engine;
   const engine = window.searchEnginesMap?.[engineKey];
   if (!engine) return;
 
-  // Hide others
-  document.querySelectorAll(".search-icon").forEach(i => {
-    if (i !== icon) i.style.display = "none";
-  });
+  // Clean all children first
+  container.innerHTML = "";
 
-  // Transform into field
-  icon.classList.add("expanded");
-  icon.innerHTML = `
-  <input type="text" placeholder="Recherche sur ${engine.name}..." />
+  const expandedDiv = document.createElement("div");
+  expandedDiv.className = "search-icon expanded";
+  expandedDiv.dataset.engine = engineKey;
+  expandedDiv.innerHTML = `
+    <input type="text" placeholder="Recherche sur ${engine.name}..." />
   `;
+  container.appendChild(expandedDiv);
 
-  const input = icon.querySelector("input");
-
+  const input = expandedDiv.querySelector("input");
   input.focus();
 
   function searchNow() {
@@ -122,16 +121,19 @@ function expandIcon(icon) {
     if (e.key === "Enter") searchNow();
   });
 
-  // Click management outside
+  input.addEventListener("click", e => e.stopPropagation());
+
   function handleClickOutside(e) {
-    if (!icon.contains(e.target)) {
+    if (!expandedDiv.contains(e.target)) {
+      searchOpen = false;
       renderSearchIcons(window.searchEnginesVisible);
       document.removeEventListener("click", handleClickOutside);
     }
   }
 
-  // Allow time for the DOM to finish the initial click event
   setTimeout(() => {
     document.addEventListener("click", handleClickOutside);
   }, 0);
+
+  searchOpen = true;
 }

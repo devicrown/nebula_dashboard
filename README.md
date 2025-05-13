@@ -55,7 +55,7 @@
 
 ### 1. Download
 ```bash
-git clone 
+git clone https://github.com/devicrown/nebula_dashboard.git
 cd nebula_dashboard
 ```
 

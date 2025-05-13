@@ -5,9 +5,15 @@
 }
 
 .theme-classic {
-    --animated-title1: #ff3333;
-    --animated-title2: #ff6666;
-    --shadow-icon: rgba(255, 54, 54, 0.5);
+    --animated-title1: #9af8ff;
+    --animated-title2: #a0f6ff;
+    --shadow-icon: rgba(54, 255, 245, 0.5);
+}
+
+.theme-dark {
+    --animated-title1: #ffdc9a;
+    --animated-title2: #ffe7a0;
+    --shadow-icon: rgba(255, 187, 99, 0.5);
 }
 
 /* Main structure */

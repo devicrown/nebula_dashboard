@@ -25,17 +25,11 @@ function applyThemeBackground(theme) {
   }
 
   if (theme === "classic") {
-    el.style.background = "url('assets/bg/img.jpg') center/cover no-repeat";
+    el.style.background = "url('assets/bg/classic.jpg') center/cover no-repeat";
   }
 
-  if (theme === "cyber") {
-    const vid = document.createElement("video");
-    vid.src = "assets/bg/cyberloop.mp4";
-    vid.autoplay = true;
-    vid.loop = true;
-    vid.muted = true;
-    vid.style = "width:100%;height:100%;object-fit:cover;position:fixed;top:0;left:0;z-index:0";
-    el.appendChild(vid);
+  if (theme === "dark") {
+    el.style.background = "url('assets/bg/dark.jpg') center/cover no-repeat";
   }
 }
 
